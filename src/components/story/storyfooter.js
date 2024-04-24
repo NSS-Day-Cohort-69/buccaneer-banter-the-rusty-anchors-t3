@@ -42,7 +42,7 @@ const StoryFooter = ({ myFavoriteScallywags, getFavoritePirates }) => {
 
   const showFollow = () => {
     const alreadyFollow = myFavoriteScallywags.find(
-      (rel) => rel.pirateId === story.pirate.id
+      (rel) => rel.pirateId === story.pirate?.id
     );
     if (!alreadyFollow) {
       return (
@@ -68,7 +68,7 @@ const StoryFooter = ({ myFavoriteScallywags, getFavoritePirates }) => {
     <>
       <Toast.Provider swipeDirection={"right"} duration={5000}>
         <div className={styles.story__footer}>
-          Written by: {story.pirate.name}
+          Written by: {story.pirate?.name}
           {showFollow()}
         </div>
 
@@ -81,7 +81,7 @@ const StoryFooter = ({ myFavoriteScallywags, getFavoritePirates }) => {
             Scallywag Added
           </Toast.Title>
           <Toast.Description className={styles.ToastDescription}>
-            You have followed {story.pirate.name}
+            You have followed {story.pirate?.name}
           </Toast.Description>
           <Toast.Action
             asChild

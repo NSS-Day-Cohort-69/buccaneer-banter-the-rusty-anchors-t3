@@ -15,8 +15,8 @@ export default function Dashboard() {
             })
     }
 
-    const getFavoritePirates = (id) => {
-        fetch(`http://localhost:8088/followers?followerId=${id}&_expand=pirate`)
+    const getFavoritePirates =  (id) => {
+        fetch (`https://localhost:7273/followers/${id}`)
             .then(response => response.json())
             .then((res) => {
                 setScallyWags(res)

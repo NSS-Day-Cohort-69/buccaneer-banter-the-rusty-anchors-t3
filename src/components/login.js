@@ -9,7 +9,7 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-   
+
 
     const response = await fetch(
       `https://localhost:7273/pirates/${name}/${shipName}`

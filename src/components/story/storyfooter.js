@@ -20,7 +20,6 @@ const follow = (follower, following, action) => {
 };
 
 const unfollow = (followerId, pirateId, action) => {
-  debugger;
 fetch(`https://localhost:7273/followers/${parseInt(followerId)}/${pirateId}`)
     .then((response) => response.json()) 
     .then((matchObject) => {
@@ -28,7 +27,7 @@ fetch(`https://localhost:7273/followers/${parseInt(followerId)}/${pirateId}`)
 
       fetch(`https://localhost:7273/followers/${matchId}`, {
         method: "DELETE",
-      }).then(() => action(parseInt(follower)));
+      }).then(() => action(parseInt(followerId)));
     });
 };
 

@@ -7,16 +7,16 @@ export default function Dashboard() {
     const [currentPirate, setCurrentPirate] = useState({ id: 0 })
     const [myFavoriteScallywags, setScallyWags] = useState([])
 
-    const getPirate = (id) => {
-        fetch(`https://localhost:7273/pirates/${id}`)
+    const getPirate = async(id) => {
+        await fetch(`https://localhost:7273/pirates/${id}`)
             .then(response => response.json())
             .then((res) => {
                 setCurrentPirate(res)
             })
     }
 
-    const getFavoritePirates =  (id) => {
-        fetch (`https://localhost:7273/followers/${id}`)
+    const getFavoritePirates = async (id) => {
+        await fetch (`https://localhost:7273/followers/${parseInt(id)}`)
             .then(response => response.json())
             .then((res) => {
                 setScallyWags(res)
